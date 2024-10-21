@@ -80,8 +80,22 @@ const PokemonDetail = () => {
                     <Card>
                         <Card.Img variant="top" src={"http://localhost:3000/" + pokemon.id + ".jpg"} />
                         <Card.Body>
-                            <Card.Title>{pokemon.nombre}</Card.Title>
-                            <Card.Text>Pokédex Number: {pokemon.numero}</Card.Text>
+                            <Card.Title>{pokemon.nombre} - Pokédex Number: {pokemon.numero}</Card.Title>
+                            <Card.Text>
+                                <ListGroup>
+                                    <ListGroupItem><strong>Types</strong></ListGroupItem>
+                                    <ListGroupItem>{pokemon.tipo1.nombre} {pokemon.tipo2 ? " - " + pokemon.tipo2.nombre : ""}</ListGroupItem>
+                                    <ListGroupItem><strong>Abilities</strong></ListGroupItem>
+                                    <ListGroupItem>
+                                        {pokemon.habilidad1.nombre} 
+                                        {pokemon.habilidad2 ? " - " + pokemon.habilidad2.nombre : ""}
+                                        {pokemon.habilidad3 ? " - " + pokemon.habilidad3.nombre : ""}
+                                        </ListGroupItem>
+                                    <ListGroupItem><strong>Descripcion</strong></ListGroupItem>
+                                    <ListGroupItem>{pokemon.descripcion}</ListGroupItem>
+
+                                </ListGroup>
+                            </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
